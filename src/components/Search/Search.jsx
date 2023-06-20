@@ -19,7 +19,6 @@ const Search = () => {
         setNotFound(false);
         setProfile(response);
         setUser("");
-        console.log(response);
       } else {
         setNotFound(true);
       }

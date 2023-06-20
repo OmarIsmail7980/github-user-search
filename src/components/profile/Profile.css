@@ -1,13 +1,17 @@
 .profile {
   width: 730px;
 
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 2rem 3rem 0 3rem;
 
   background: var(--box-bg-color);
   box-shadow: -4px 4px 0.5rem rgba(0, 0, 0, 0.2);
 
   position: relative;
+}
+
+#dark .profile {
+  background: var(--dark-box-bg-color);
 }
 
 .profile__img {
@@ -47,7 +51,10 @@
   font-size: 26px;
   font-weight: bold;
 }
-.profile__content-user__info p{
+#dark .profile__content-user__info h1 {
+  color: var(--box-bg-color);
+}
+.profile__content-user__info p {
   color: var(--btn-bg-color);
   font-size: 16px;
 }
@@ -56,11 +63,18 @@
   color: #697c9a;
   margin-top: 0.5rem;
 }
+#dark .profile__content-joined {
+  color: var(--box-bg-color);
+}
 
 .profile__content-bio {
   font-size: 15px;
   color: var(--light-secondary-text);
   margin-bottom: 1.5rem;
+}
+#dark .profile__content-bio {
+  color: var(--box-bg-color);
+  opacity: 70%;
 }
 
 .profile__content-details {
@@ -74,15 +88,25 @@
   margin-bottom: 2rem;
   border-radius: 0.5rem;
 }
+#dark .profile__content-details {
+  background: var(--dark-bg-color);
+}
+
 .profile__content-details div h4 {
   font-size: 13px;
   font-weight: normal;
   color: var(--light-secondary-text);
 }
+#dark .profile__content-details div h4 {
+  color: var(--box-bg-color);
+}
 .profile__content-details div p {
   font-size: 22px;
   font-weight: bold;
   text-align: start;
+}
+#dark .profile__content-details div p {
+  color: var(--box-bg-color);
 }
 
 .profile__content-links {
@@ -91,6 +115,9 @@
   gap: 4rem;
 
   margin-bottom: 3rem;
+}
+#dark .profile__content-links-group {
+  color: var(--box-bg-color);
 }
 .profile__content-links-group {
   display: flex;
@@ -102,8 +129,18 @@
   gap: 1rem;
 }
 
-.profile__content-links-group div img {
-  object-fit: contain;
+.profile__content-links-group div svg {
+  fill: #4b6a9b;
+}
+#dark .profile__content-links-group div svg {
+  fill: var(--box-bg-color);
+}
+
+.profile__content-links-group div p a {
+  color: var(--light-secondary-text);
+}
+#dark .profile__content-links-group div p a {
+  color: var(--box-bg-color);
 }
 
 @media screen and (max-width: 950px) {

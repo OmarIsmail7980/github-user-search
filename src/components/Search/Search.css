@@ -1,19 +1,21 @@
 .search {
   background: var(--box-bg-color);
   width: 730px;
-  height: 69px;
 
   display: flex;
   gap: 1rem;
   justify-content: space-between;
 
   padding: 0.5rem 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   margin-bottom: 2rem;
 
   box-shadow: -4px 4px 0.5rem rgba(0, 0, 0, 0.2);
 
   position: relative;
+}
+#dark .search{
+  background:var(--dark-box-bg-color);
 }
 .search img {
   position: absolute;
@@ -24,8 +26,9 @@
 
 .search input {
   margin-left: 3rem;
-  margin-right: 4rem;
-  width: 254px;
+  width: 100%;
+
+  background:transparent;
 
   font-size: 18px;
   text-decoration: none;
@@ -33,6 +36,15 @@
   border: none;
 
   cursor: pointer;
+}
+.search input::placeholder{
+  color:var(--light-secondary-text);
+}
+#dark .search input{
+  color:var(--box-bg-color);
+}
+#dark .search input::placeholder{
+  color:var(--box-bg-color);
 }
 
 .search p {

@@ -4,11 +4,15 @@
 
   --light-bg-color: #f6f8ff;
   --dark-bg-color:#141D2F;
+
   --box-bg-color:#fff;
+  --dark-box-bg-color:#1E2A47;
+
   --btn-bg-color:#0079FF;
   --btn-bg-color-active:#60ABFF;
   
   --light-secondary-text:#4B6A9B;
+  --dark:#222731;
 }
 
 *{
@@ -18,10 +22,17 @@
   font-family: var(--app-font);
 }
 
+
 .app{
   width:100%;
   height:100vh;
+}
+
+#light{
   background:var(--light-bg-color);
+}
+#dark{
+  background:var(--dark-bg-color);
 }
 
 .app__sections{
@@ -31,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .underline:hover{
