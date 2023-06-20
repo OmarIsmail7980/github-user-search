@@ -1,7 +1,30 @@
+import { useState } from "react";
 import searchIcon from "../../assets/icon-search.svg";
+import { useProfile } from "../../context/ProfileContext";
 import "./Search.css";
 
 const Search = () => {
+  const { setProfile, setNotFound, notFound } = useProfile();
+  `https://api.github.com/users/:username`;
+  const [user, setUser] = useState("");
+
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(`https://api.github.com/users/${user}`, {
+        method: "GET",
+      }).then((response) => response.json());
+
+      if (response.created_at) {
+        setNotFound(false);
+        setProfile(response);
+        console.log(response);
+      } else {
+        setNotFound(true);
+      }
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
     <section className="search">
       <img className="search__icon" src={searchIcon} alt="search" />
@@ -9,9 +32,10 @@ const Search = () => {
         className="search__input"
         type="text"
         placeholder="Search GitHub username…"
+        onChange={(event) => setUser(event.target.value)}
       />
-      <p>No results</p>
-      <button className="search__btn" type="submit">
+      {notFound && <p>No results</p>}
+      <button className="search__btn" type="submit" onClick={handleSearch}>
         Search
       </button>
     </section>

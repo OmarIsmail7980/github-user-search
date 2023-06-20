@@ -111,3 +111,24 @@
     padding: 0.5rem;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .search {
+    width: 250px;
+  }
+  .search input {
+    margin-left: 0rem;
+  }
+
+  .search img {
+    display:none;
+  }
+  .search button {
+    width: 60px;
+    height: 36px;
+
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+}
