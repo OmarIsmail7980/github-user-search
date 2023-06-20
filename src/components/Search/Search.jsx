@@ -8,7 +8,8 @@ const Search = () => {
   `https://api.github.com/users/:username`;
   const [user, setUser] = useState("");
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch(`https://api.github.com/users/${user}`, {
         method: "GET",
@@ -17,6 +18,7 @@ const Search = () => {
       if (response.created_at) {
         setNotFound(false);
         setProfile(response);
+        setUser("");
         console.log(response);
       } else {
         setNotFound(true);
@@ -31,6 +33,7 @@ const Search = () => {
       <input
         className="search__input"
         type="text"
+        value={user}
         placeholder="Search GitHub username…"
         onChange={(event) => setUser(event.target.value)}
       />
